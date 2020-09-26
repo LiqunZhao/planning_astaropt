@@ -1,0 +1,145 @@
+diff -r src/BinHandler.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/BinHandler.cpp
+1c1
+< #include "lanelet2_io/io_handlers/BinHandler.h"
+---
+> #include "io_handlers/BinHandler.h"
+5,7c5,7
+< #include "lanelet2_io/Exceptions.h"
+< #include "lanelet2_io/io_handlers/Factory.h"
+< #include "lanelet2_io/io_handlers/Serialize.h"
+---
+> #include "Exceptions.h"
+> #include "io_handlers/Factory.h"
+> #include "io_handlers/Serialize.h"
+diff -r src/Factory.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/Factory.cpp
+1,2c1,2
+< #include "lanelet2_io/io_handlers/Factory.h"
+< #include "lanelet2_io/Exceptions.h"
+---
+> #include "io_handlers/Factory.h"
+> #include "Exceptions.h"
+37d36
+<   std::cout << "aaaaaaaaaa" <<std::endl;
+39d37
+<   std::cout << "bbbbbbbbbbbb" <<std::endl;
+42c40
+<     return newObj;
+---
+> //    return newObj;
+74c72
+<         std::cout << "@@@@@@@@" << strategy << std::endl;
+---
+>       std::cout << "@@@@@@@@" << strategy << std::endl;
+76c74
+<         std::cout << "@@@@@@@@" << strategy << std::endl;
+---
+>     std::cout << "@@@@@@@@" << strategy << std::endl;
+diff -r src/Io.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/Io.cpp
+1c1
+< #include "lanelet2_io/Io.h"
+---
+> #include "Io.h"
+3,4c3,4
+< #include "lanelet2_io/Exceptions.h"
+< #include "lanelet2_io/io_handlers/Factory.h"
+---
+> #include "Exceptions.h"
+> #include "io_handlers/Factory.h"
+33d32
+<   std::cout << "###############" << std::endl;
+diff -r src/OsmFile.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/OsmFile.cpp
+1c1
+< #include "lanelet2_io/io_handlers/OsmFile.h"
+---
+> #include "io_handlers/OsmFile.h"
+diff -r src/OsmHandlerLoad.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/OsmHandlerLoad.cpp
+2c2
+< #include "lanelet2_io/io_handlers/OsmHandler.h"
+---
+> #include "io_handlers/OsmHandler.h"
+10,12c10,12
+< #include "lanelet2_io/Exceptions.h"
+< #include "lanelet2_io/io_handlers/Factory.h"
+< #include "lanelet2_io/io_handlers/OsmFile.h"
+---
+> #include "Exceptions.h"
+> #include "io_handlers/Factory.h"
+> #include "io_handlers/OsmFile.h"
+280c280
+<       parserError(area.id, "Areas must sdfsad have exactly one outer ring!");
+---
+>       parserError(area.id, "Areas must have exactly one outer ring!");
+375d374
+< 
+diff -r src/OsmHandlerWrite.cpp /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/src/OsmHandlerWrite.cpp
+3,6c3,6
+< #include "lanelet2_io/Exceptions.h"
+< #include "lanelet2_io/io_handlers/Factory.h"
+< #include "lanelet2_io/io_handlers/OsmFile.h"
+< #include "lanelet2_io/io_handlers/OsmHandler.h"
+---
+> #include "Exceptions.h"
+> #include "io_handlers/Factory.h"
+> #include "io_handlers/OsmFile.h"
+> #include "io_handlers/OsmHandler.h"
+diff -r include/lanelet2_io/Io.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/Io.h
+5,6c5,6
+< #include "lanelet2_io/Configuration.h"
+< #include "lanelet2_io/Projection.h"
+---
+> #include "Configuration.h"
+> #include "Projection.h"
+diff -r include/lanelet2_io/io_handlers/BinHandler.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/BinHandler.h
+2,3c2,3
+< #include "lanelet2_io/io_handlers/Parser.h"
+< #include "lanelet2_io/io_handlers/Writer.h"
+---
+> #include "Parser.h"
+> #include "Writer.h"
+diff -r include/lanelet2_io/io_handlers/Factory.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/Factory.h
+7,10c7,10
+< #include "lanelet2_io/Configuration.h"
+< #include "lanelet2_io/Projection.h"
+< #include "lanelet2_io/io_handlers/Parser.h"
+< #include "lanelet2_io/io_handlers/Writer.h"
+---
+> #include "../Configuration.h"
+> #include "../Projection.h"
+> #include "Parser.h"
+> #include "Writer.h"
+154c154
+<       std::cout << "###############" << std::endl;
+---
+>           std::cout << "###############" << std::endl;
+diff -r include/lanelet2_io/io_handlers/IoHandler.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/IoHandler.h
+3,4c3,4
+< #include "lanelet2_io/Configuration.h"
+< #include "lanelet2_io/Projection.h"
+---
+> #include "../Configuration.h"
+> #include "../Projection.h"
+diff -r include/lanelet2_io/io_handlers/OsmHandler.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/OsmHandler.h
+2,4c2,4
+< #include "lanelet2_io/io_handlers/OsmFile.h"
+< #include "lanelet2_io/io_handlers/Parser.h"
+< #include "lanelet2_io/io_handlers/Writer.h"
+---
+> #include "OsmFile.h"
+> #include "Parser.h"
+> #include "Writer.h"
+diff -r include/lanelet2_io/io_handlers/Parser.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/Parser.h
+4,6c4,6
+< #include "lanelet2_io/Exceptions.h"
+< #include "lanelet2_io/Projection.h"
+< #include "lanelet2_io/io_handlers/IoHandler.h"
+---
+> #include "../Exceptions.h"
+> #include "../Projection.h"
+> #include "IoHandler.h"
+diff -r include/lanelet2_io/io_handlers/Writer.h /home/ao/Projects/catkin_ws/src/lanelet2/lanelet2_io/include/lanelet2_io/io_handlers/Writer.h
+5,6c5,6
+< #include "lanelet2_io/Projection.h"
+< #include "lanelet2_io/io_handlers/IoHandler.h"
+---
+> #include "../Projection.h"
+> #include "IoHandler.h"

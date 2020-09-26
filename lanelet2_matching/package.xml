@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lanelet2_matching</name>
+  <version>0.0.0</version>
+  <description>ToDo: Edit package description</description>
+
+  <license>BSD</license>
+  <maintainer email="maximilian.naumann@kit.edu">Maximilian Naumann</maintainer>
+  <author email="maximilian.naumann@kit.edu">Maximilian Naumann</author>
+  <url type="repository">https://gitlab.mrt.uni-karlsruhe.de/lanelet2/lanelet2_matching</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>mrt_cmake_modules</build_depend>
+  <test_depend>gtest</test_depend>
+
+  <depend>lanelet2_core</depend>
+
+  <!-- tests -->
+  <test_depend>lanelet2_io</test_depend>
+  <test_depend>lanelet2_projection</test_depend>
+  <test_depend>lanelet2_maps</test_depend>
+
+</package>
